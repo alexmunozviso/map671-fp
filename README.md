@@ -7,7 +7,7 @@
 If you wanted to include a table of contents to sections, and then links to each section.
 
 
-- [Data Source](##data-source)
+- [Data Source](#data-source)
 - [Project Background](#project-background)
 - ....
 
@@ -19,7 +19,7 @@ If you wanted to include a table of contents to sections, and then links to each
 A database of Bigfoot sightings was constructed using the summaries of data from [The Bigfoot Field Research Organization (BFRO)](www.bfro.net) elaborated by [Mangani's Bigfoot Maps](http://penn.freeservers.com/bigfootmaps/). From the latter's website, I downloaded the
 [text file](http://www.penn.freeservers.com/bigfootmaps/BFROcreature.txt) containing the 2016 updated BFRO's creature sightings. I converted the text file into a CSV file and edited it using [VS Code](https://code.visualstudio.com). I organized the attribute data file to contain latitude, longitude, date of the Bigfoot sighting, and a link to BFRO's report of each record (see Fig. 1). 
 
-![CSV screenshot](https://github.com/alexmunozviso/map671-fp/blob/main/img/screenshot01.png)
+![CSV screenshot](https://github.com/alexmunozviso/map671-fp/blob/main/img/screenshot01p.png)
 
 * Initial Data projection: 
 * Final Map projection:
