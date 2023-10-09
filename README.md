@@ -20,7 +20,7 @@ A database of Bigfoot sightings was constructed using the summaries of data from
 [text file](http://www.penn.freeservers.com/bigfootmaps/BFROcreature.txt) containing the 2016 updated BFRO's creature sightings. I converted the text file into a CSV file and edited it using [VS Code](https://code.visualstudio.com). I organized the attribute data file to contain latitude, longitude, date of the Bigfoot sighting, and a link to BFRO's report of each record (see Fig. 1). 
 
 ![CSV screenshot](https://github.com/alexmunozviso/map671-fp/blob/main/img/screenshot01.png)
-(Fig. 1: Screenshot of the CSV file viewed in VS Code)
+###### (Fig. 1: Screenshot of the CSV file viewed in VS Code)
 
 * Initial Data projection: 
 * Final Map projection:
