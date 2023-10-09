@@ -22,15 +22,16 @@ Although I am not the 'I believe' type or into conspiracy theories, I thought it
 
 ### Bigfoot Sightings Data
 My database of Bigfoot sightings was constructed using the summaries of data from [The Bigfoot Field Research Organization (BFRO)](http://www.bfro.net) elaborated by [Mangani's Bigfoot Maps](http://penn.freeservers.com/bigfootmaps/). From the latter's website, I downloaded a
-[text file](http://www.penn.freeservers.com/bigfootmaps/BFROcreature.txt) containing the 2016 updated BFRO's creature sightings. This data includes only visual sightings of the Bigfoot and excludes records of audible sightings, trackmarks, or footprints. I converted the text file into a CSV file and edited it using [VS Code](https://code.visualstudio.com). I organized and reworked the attribute data file to contain latitude, longitude, date of the sighting, and a link to the BFRO's report of each record in a way that could be read by QGIS as a geodata layer (see Fig. 1). 
+[text file](http://www.penn.freeservers.com/bigfootmaps/BFROcreature.txt) containing the 2016 updated BFRO's creature sightings. This data includes only visual sightings of the Bigfoot and excludes records of audible sightings, trackmarks, or footprints. I converted the text file into a CSV file and edited it using [VS Code](https://code.visualstudio.com). I organized and reworked the attribute data file to contain latitude, longitude, date of the sighting, and a link to the BFRO's report of each record in a way that could be read by QGIS as a geodata layer (see Fig. 1). Finally, I imported the CSV file into QGIS as Delimited text and saved it as a GeoJSON. 
+
+**Both files can be downloaded here:**
+
+* [bfro-creature-sightings.csv](https://github.com/alexmunozviso/map671-fp/blob/main/data/bfro-creature-sightings.csv)
+* DATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA GeoJSON LINK
 
 ![CSV screenshot](https://github.com/alexmunozviso/map671-fp/blob/main/img/screenshot01.png)
 *Fig. 1: Screenshot of the CSV file after editing it in VS Code*
 
-The CSV file was then imported to QGIS as Delimited text and saved as a GeoJSON. **Both files can be downloaded here:**
-
-* [bfro-creature-sightings.csv](https://github.com/alexmunozviso/map671-fp/blob/main/data/bfro-creature-sightings.csv)
-* DATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA GeoJSON LINK
 
 ### Other Data
 2022 United States county and state boundaries were obtained from the [United States Census Bureau website](https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html). After adding geometries, **joining the Bigfoot sightings database per location**, and normalizing this data per state/county area, these are the final datasets:
