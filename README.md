@@ -31,7 +31,8 @@ My database of Bigfoot sightings was constructed using the summaries of data fro
 
 ![CSV screenshot](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig1.png)
 *Fig. 1 (left): VS Code screenshot of the text file as downloaded from Mangani's Bigfoot Maps*
-*Fig. 2 (right): VS Code screenshot of the edited CSV file*
+
+*Fig. 2 (right): VS Code screenshot of the final CSV file database*
 
 
 ### Other Data
