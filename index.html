@@ -137,14 +137,27 @@
         <h2>Àlex Muñoz Viso (he/him/his), MAP671 Final Project</h2>
         <div class="row">
             <div class="first-column">
+                <h3>Project Introduction</h3>
+                <p>
+                    For the final project of MAP671, I wanted to create a map representing 
+                    curious data. Looking for different themes, I stumbled upon <a hred="http://www.bfro.net">The Bigfoot Field Research Organization (BFRO)</a>, a website compiling 
+                    different databases of Bigfoot encounters including sightings, audible sightings, trackmarks, or footprints. Every report included in these databases is 
+                    geocoded and timestamped. </p>
+
+                <p> 
+                    Although I am not the 'I believe' type or into conspiracy theories, I thought it could be fun to map this data. Moreover, the BFRO accepts online submissions 
+                    of Bigfoot sighting reports, which adds a certain sense of community data crowdsourcing and community mapping to their project; two research topics that are of great 
+                    personal interest.
+                </p>
+
                 <h3>Data Sources</h3>
                 <p>
-                    I built my <b>Bigfoot sightings database</b> using the 2016 updated creature sighting database from <a hred="http://www.bfro.net">The Bigfoot Field Research Organization (BFRO)</a> 
-                    summarized by <a hred="http://penn.freeservers.com/bigfootmaps">Mangani's Bigfoot Maps</a>. <b>2022 United States county and state boundaries</b> were obtained from the <a hred="https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary">United States Census Bureau website</a>.
+                    I built my <b>Bigfoot sightings database</b> using the 2016 updated creature sighting data from the <a hred="http://www.bfro.net">BFRO</a> 
+                    summarized by <a hred="http://penn.freeservers.com/bigfootmaps">Mangani's Bigfoot Maps</a>. The <b>2022 United States county and state boundaries</b> were obtained from the <a hred="https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary">United States Census Bureau website</a>.
                 </p>
                 <h3>Other Sources</h3>
                 <p>
-                    The Bigfoot miniature used as the webmap report symbol and at the header of this site is a slightly modified version of a vector downladed from <a hred="https://www.freepik.com/">Freepik</a>.
+                    The Bigfoot miniature used all over this project is a slightly modified version of a vector downladed from <a hred="https://www.freepik.com/">Freepik</a>.
                 </p>
                 
                 <h3>Tools used in this project</h3>
@@ -156,42 +169,53 @@
                 </ul>
                         
                 </p>
-                <h3>Static Maps from the Project</h3>
+                <h3>Project Static Maps</h3>
                 <p>
-                    Aside from the webmap available at the top of this page, I built three static maps for this project:
+                    Aside from the webmap available at the top of this page, I built three static maps for this project. They are designed to be presented together as each 
+                    map offers distinct nuances from the same data.
                     <ul>
-                        <li><a href="#Big Foot Sightings by State">Big Foot Sightings by State</a><br /></li>
-                        <li><a href="#Big Foot Sightings by County">Big Foot Sightings by County</a><br /></li>
-                        <li><a href="#Big Foot Sighting Reports (1900-2016)">Big Foot Sighting Reports (1900-2016)</a><br /></li>
+                        <li><a href="#Bigfoot Sightings by State">Bigfoot Sightings by State</a><br /></li>
+                        <li><a href="#Bigfoot Sightings by County">Bigfoot Sightings by County area</a><br /></li>
+                        <li><a href="#Bigfoot Sighting Reports (1900-2016)">Bigfoot Sighting Reports (1900-2016)</a><br /></li>
                     </ul>
                 </p>
                 
-                <h4><a id="Big Foot Sightings by State">Big Foot Sightings by State</a></h4>
+                <h4><a id="Bigfoot Sightings by State">Bigfoot Sightings by State</a></h4>
                 <p>
-                    The Bigfoot miniature used as the webmap report symbol and at the header of this site is a slightly modified version of a vector downladed from <a hred="https://www.freepik.com/">Freepik</a>.
+                    The first map represents Bigfoot sightings from 1900 to 2016 per state as a choropleth map. The values were not normalized because I wanted to provide 
+                    a first map that could be read easily. The District of Columbia is the only state with zero sightings. Because of its small size, it cannot be seen as a sole 
+                    record so, I decided include in a single category all the states with zero to twenty-five reports. 
                 </p>
 
-                <img class="max-image-width" src="maps/map1-states600dpi.png"
+                <img class="max-image-width" src="maps/map1-states600dpi.png"  alt="Failed to load: Map showing reported Bigfoot Sightings per state from 1900 to 2016"
                     title="Gray&#x27;s Arch">
-                <div class="linkbox">Photograph by Boyd Shearer</div>
 
-                <h4><a id="Big Foot Sightings by County">Big Foot Sightings by County</a></h4>
+                <h4><a id="Bigfoot Sightings by County">Bigfoot Sightings by County area</a></h4>
                 <p>
-                    The Bigfoot miniature used as the webmap report symbol and at the header of this site is a slightly modified version of a vector downladed from <a hred="https://www.freepik.com/">Freepik</a>.
+                    The second map represents Bigfoot sightings per county. Instead of visualizing the total number of reports in each county, I opted for showing a normalized
+                    measure, as it represents geography in a more faithful way, accounting for each countiy's size. Because the three maps are designed to be displayed together, 
+                    this second map is not aiming at offering a clear information graphic (as the first map did) but a more nuanced picture than that of the first map.
                 </p>
 
-                <img class="max-image-width" src="https://farm8.staticflickr.com/7418/27278443166_b1babc3b16_b.jpg"
+                <img class="max-image-width" src="maps/map2-counties600dpi.png"  alt="Failed to load: Map showing Bigfoot sighting density by county"
                     title="Gray&#x27;s Arch">
-                <div class="linkbox">Photograph by Boyd Shearer</div>
 
-                <h4><a id="Big Foot Sighting Reports (1900-2016)">Big Foot Sighting Reports (1900-2016)</a></h4>
+                <h4><a id="Bigfoot Sighting Reports (1900-2016)">Bigfoot Sighting Reports (1900-2016)</a></h4>
                 <p>
-                    The Bigfoot miniature used as the webmap report symbol and at the header of this site is a slightly modified version of a vector downladed from <a hred="https://www.freepik.com/">Freepik</a>.
+                    The third map represents all Bigfoot sighting reports in my database as single symbols in a map of the contiguous United States. I wanted to include this map
+                    because I think it is the one that offers the information in a more visually striking way. Seen together with the other maps, one can better understand sightening 
+                    clusterings and start asking interesting geographical questions.
                 </p>
 
-                <img class="max-image-width" src="https://farm8.staticflickr.com/7418/27278443166_b1babc3b16_b.jpg"
+                <img class="max-image-width" src="maps/map3-reports600dpi.png" alt="Failed to load: Map showing reported Bigfoot Sightings from 1900 to 2016"
                     title="Gray&#x27;s Arch">
-                <div class="linkbox">Photograph by Boyd Shearer</div>
+
+                    <h3>Final thoughts</h3>
+                <p>
+                    This project was a playful way of reviewing and applying many of the topics, tools, and processes learned during the course. Moreover, the topic I chose allows for 
+                    very interesting reflections on the nature of data, the relationship between data and truth, or online data and mapping communities. Overall, I am happy with 
+                    the results of this project and I am really looking forward to continue the learning process next semester in MAP672.
+                </p>
 
             </div>
         </div>
