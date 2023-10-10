@@ -9,6 +9,7 @@
   - [Data Sources](#data-sources)
     - [Bigfoot Sightings Data](#bigfoot-sightings-data)
     - [Other Data](#other-data)
+  - [Tools Used](#tools-used)
   - [Mapmaking Process](#mapmaking-process)
 - [Final Project Link](#final-project-link)
 
@@ -22,9 +23,9 @@ Although I am not the 'I believe' type or into conspiracy theories, I thought it
 
 ### Bigfoot Sightings Data
 My database of Bigfoot sightings was constructed using the summaries of data from [The Bigfoot Field Research Organization (BFRO)](http://www.bfro.net) elaborated by [Mangani's Bigfoot Maps](http://penn.freeservers.com/bigfootmaps/). From the latter's website, I downloaded a
-[text file](http://www.penn.freeservers.com/bigfootmaps/BFROcreature.txt) containing the 2016 updated BFRO's creature sightings. This data includes only visual sightings of the Bigfoot and excludes records of audible sightings, trackmarks, or footprints. I converted the text file into a CSV file and edited it using [VS Code](https://code.visualstudio.com). I organized and reworked the attribute data file to contain latitude, longitude, date of the sighting, and a link to the BFRO's report of each record in a way that could be read by QGIS as a geodata layer (see Fig. 1 & 2). Finally, I imported the CSV file into QGIS as Delimited text and saved it as a GeoJSON. 
+[text file](http://www.penn.freeservers.com/bigfootmaps/BFROcreature.txt) containing the 2016 updated BFRO's creature sightings. This data includes only visual sightings of the Bigfoot and excludes records of audible sightings, trackmarks, or footprints. I converted the text file into a CSV file and edited it using [VS Code](https://code.visualstudio.com). I re-organized and arranged the attribute data file to keep contain latitude, longitude, date of the sighting, and a link to the BFRO's sighting report (see Fig. 1 & 2). My final CSV file contained 3209 geocoded and timestamped reports for the North American area. After clipping the database to the extent of the contiguous United States in QGIS, 3032 reports remained on my final database.
 
-**Both files can be downloaded here:**
+Here you can download the prime CSV file and the final version of the database as a GeoJSON:
 
 * [bfro-creature-sightings.csv](https://github.com/alexmunozviso/map671-fp/blob/main/data/bfro-creature-sightings.csv)
 * DATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA GeoJSON LINK
@@ -37,6 +38,12 @@ My database of Bigfoot sightings was constructed using the summaries of data fro
 2022 United States county and state boundaries were obtained from the [United States Census Bureau website](https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html). After adding geometries, **joining the Bigfoot sightings database per location**, and normalizing this data per state/county area, these are the final datasets:
 * DATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA state LINK
 * DATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA county LINK
+
+## Tools Used
+* [Visual Studio Code](https://code.visualstudio.com) was used to create the Bigfoot Sighting Database.
+* [QGIS](https://www.qgis.org) was used to geoprocess, analyze, and represent the geodata for this project.
+* Data is shown on [Mapbox](https://www.mapbox.com/) web map. If the map got popular it would require a fee to use.
+* [Adobe Illustrator](https://www.adobe.com/products/illustrator) was used to edit the Bigfoot miniatures used for both the webmap and this site header.
 
 ## Mapmaking Process
 

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset=utf-8 />
-    <title>Mapping Bigfoot Sightings</title>
+    <title>Mapping Bigfoot Sightings in the Contiguous United States</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
@@ -19,10 +19,10 @@
         body {
             margin: 0;
             padding: 0;
-            background: #c7c9c8;
+            background: #fff2e1;
             font-family: 'Lato', sans-serif;
             font-weight: 300;
-            color: #3d3d3d;
+            color: #301d07;
             font-size: 1.1em;
 
         }
@@ -46,7 +46,7 @@
         h2 {
             font-family: 'Lato', sans-serif;
             font-weight: 300;
-            color: #63666a;
+            color: #3f3830;
             font-size: 1.5em;
             letter-spacing: .06em;
             font-style: italic;
@@ -60,7 +60,7 @@
         }
 
         a {
-            color: #15397f;
+            color: #063799;
             text-decoration: none;
         }
 
@@ -72,7 +72,7 @@
             padding: 0px 20px 4px 20px;
             /* font-size: 0.96em; */
             line-height: 1.6em;
-            color: #63666a;
+            color: #313335;
         }
 
         li {
@@ -122,10 +122,7 @@
 
         @media screen and (max-width: 800px) {
 
-            .first-column,
-            .column {
-                width: 100%;
-            }
+           
         }
     </style>
 </head>
@@ -133,24 +130,40 @@
 <body>
     <iframe src="map.html" width="100%" height="440px"></iframe>
     <section>
-        <a href='map.html' class="linkbox">Full-screen map</a>
+        <a href='map.html' class="linkbox">Click here for full-screen map</a>
 
-        <img src="arches.svg" class="svg-title">
-        <h1>Mapping Bigfoot Sightings</h1>
-        <h2>Àlex Muñoz Viso</h2>
+        <img src="miniature\bf-symbol4.svg" class="svg-title">
+        <h1>Mapping Bigfoot Sightings in the Contiguous United States</h1>
+        <h2>Àlex Muñoz Viso (he/him/his), MAP671 Final Project</h2>
         <div class="row">
             <div class="first-column">
+                <h3>Data Sources</h3>
                 <p>
-                    Arches extracted from the Domestic and Antarctic Names (State and Topical Gazetteer) published by
-                    the United States Board on Geographic Namkes. (<a hred="https://geonames.usgs.gov/domestic">geonames.usgs.gov</a>)
-                    Data accessed August, 2018. Contours were extracted from a USGS NED 1/3 arc-second raster digital
-                    elevation model. This data can be accessed at the USGS 3D Elevation Program (<a href="https://www.usgs.gov/core-science-systems/ngp/3dep">usgs.gov</a>)
+                    I built my <b>Bigfoot sightings database</b> using the 2016 updated creature sighting database from <a hred="http://www.bfro.net">The Bigfoot Field Research Organization (BFRO)</a> 
+                    summarized by <a hred="http://penn.freeservers.com/bigfootmaps">Mangani's Bigfoot Maps</a>. This data only includes reports of visual sightings of the 
+                    Bigfoot and excludes records of audible sightings, trackmarks, or footprints. My final CSV file contained 3209 geocoded and timestamped reports for the North America area. After
+                    clipping them to the extent of the contiguous United States, 3032 reports remained on my final database. Aside from a geocode and a timestamp, the database includes 
+                    also a link to each report on <a hred="http://www.bfro.net">BFRO's website</a>.
+
+                    </li>
+
+                </p>
+                <p>
+                    I built my <b>Bigfoot sightings database</b> using the 2016 updated creature sighting database from <a hred="http://www.bfro.net">The Bigfoot Field Research Organization (BFRO)</a> 
+                    summarized by <a hred="http://penn.freeservers.com/bigfootmaps">Mangani's Bigfoot Maps</a>. This data only includes reports of visual sightings of the 
+                    Bigfoot and excludes records of audible sightings, trackmarks, or footprints. My final CSV file contained 3209 geocoded and timestamped reports for the North America area. After
+                    clipping them to the extent of the contiguous United States, 3032 reports remained on my final database. Aside from a geocode and a timestamp, the database includes 
+                    also a link to each report on <a hred="http://www.bfro.net">BFRO's website</a>.
+
+                    </li>
+
                 </p>
                 <h3>Tools used in this project</h3>
                 <ul>
-                    <li>PostGIS was used to store/query the national dataset.</li>
-                    <li>Data is shown on Mapbox web map with geolocation services enabled. If the map got popular it would require a fee to use.</li>
-                    <li>GDAL and QGIS to convert raster elevation units and create contours.</li>
+                    <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> was used to create the Bigfoot Sighting Database.
+                    <li><a href="https://www.qgis.org">QGIS</a> was used to geoprocess, analyze, and represent the geodata for this project.</li>
+                    <li>Data is shown on <a href="https://www.mapbox.com/">Mapbox</a> web map. If the map got popular it would require a fee to use.</li>
+                    <li><a href="https://www.adobe.com/products/illustrator">Adobe Illustrator</a> was used to edit the Bigfoot miniatures used for both the webmap and this site header.</li>
                 </ul>
 
 
@@ -171,8 +184,8 @@
 
         <hr>
         <!-- <h4><a href="https://uky-gis.github.io">UKy GIS and Mapping</a></h4> -->
-        <a href="https://uky-gis.github.io">
-            <img src="logo-color-400px.png" alt="Uinversity of Kentucky Geography"></a>
+        <a href="https://github.com/alexmunozviso" class="linkbox">Àlex Muñoz Viso (he/him/his)</a>
+        <a href="https://uky-gis.github.io" class="linkbox">University of Kentucky Geography</a>
     </section>
 </body>
 </html>
