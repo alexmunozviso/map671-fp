@@ -33,7 +33,7 @@ Here you can download the prime CSV file and the final version of the database a
 * [us-clipped-bfro-creature-sightings.geojson](https://github.com/alexmunozviso/map671-fp/blob/main/data/us-clipped-bfro-creature-sightings.geojson)
 
 ![Fig 1&2](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig1-2.png)
-*Fig. 1 (left): VS Code screenshot of the text file as downloaded from Mangani's Bigfoot Maps* | *Fig. 2 (right): VS Code screenshot of the final CSV file database*
+*Fig. 1 (left): VS Code screenshot of the text file as downloaded from Mangani's Bigfoot Maps* | *Fig. 2 (right): VS Code screenshot of the final CSV file database.*
 
 
 ### Other Data
@@ -52,11 +52,23 @@ Here you can download the prime CSV file and the final version of the database a
 The static maps were all created using QGIS. The CRS was set to ESRI: 102008 (North America Albers Equal Area Conic), as it is a standard projected coordinate system for mapping the contiguous United States. 
 
 First, I imported the CSV containing the Bigfoot sightings database as delimited text using the Data Source Manager (see Fig. 3). The data was then imported to QGIS as a point data layer. Then, I imported the  shapefiles downloaded from the US Census Bureau containing state and county boundaries. 
-![Fig 3](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig3.png)
-*Fig. 3: Thanks to the data values re-organization seen in Fig. 2, the CSV file can be imported as a point layer through the lat/lon fields*
 
-Using the Vector geoprocessing tool 'Clip', I extracted those Bigfoot sightings within my database that happened in the contiguous US. I did so clipping 
+![Fig 3](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig3copia.png)
+*Fig. 3: Thanks to setting the appropriate field names and data organization (see Fig. 2), the CSV file can be imported as a point layer by matching X,Y values with the lon,lat fields in the CSV.*
 
+Using the Vector geoprocessing tool 'Clip', I extracted those Bigfoot sightings within my database that happened in the contiguous United States. I did so by clipping the Bigfoot database the extent of one of the shapefiles obtained from the US Census Bureau. 
+
+![Fig 4](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig4.png)
+*Fig. 4: On the left side you can see the values given to the 'Clip' tool. On the right side you can see the geoprocessing result. The brown points are the original imported data and the red ones are the resulting clipped ones.*
+
+After getting area information for my state/counties shapefiles using the 'Add geometry attributes' tool, I calculated a new field in their attribute table converting the 'Area' field (which is calculated in square meters) to square kilometers to ease future field calculations.
+
+The following step was to create a field containing unique values for each of the three layers so they can be joined later. I calculated a new field called 'Id' and filled with unique values (1,2,3,4,5,...) using the expression *$Id* in the field calculator expression box.
+
+Using these fields, 
+
+![Fig 5](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig4.png)
+*Fig. 5: 'Id' field calculation.*
 
 ### Webmap
 
