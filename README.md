@@ -11,6 +11,8 @@
     - [Other Data](#other-data)
   - [Tools Used](#tools-used)
   - [Mapmaking Process](#mapmaking-process)
+    - [Static Maps](#static-maps)
+    - [Webmap](#webmap)
 - [Final Project Link](#final-project-link)
 
 ***
@@ -30,7 +32,7 @@ Here you can download the prime CSV file and the final version of the database a
 * [bfro-creature-sightings.csv](https://github.com/alexmunozviso/map671-fp/blob/main/data/bfro-creature-sightings.csv)
 * [us-clipped-bfro-creature-sightings.geojson](https://github.com/alexmunozviso/map671-fp/blob/main/data/us-clipped-bfro-creature-sightings.geojson)
 
-![CSV screenshot](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig1.png)
+![Fig 1&2](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig1-2.png)
 *Fig. 1 (left): VS Code screenshot of the text file as downloaded from Mangani's Bigfoot Maps* | *Fig. 2 (right): VS Code screenshot of the final CSV file database*
 
 
@@ -41,12 +43,22 @@ Here you can download the prime CSV file and the final version of the database a
 
 ## Tools Used
 * [Visual Studio Code](https://code.visualstudio.com) was used to create the Bigfoot Sighting Database.
-* [QGIS](https://www.qgis.org) was used to geoprocess, analyze, and represent the geodata for this project.
+* [QGIS](https://www.qgis.org) was used to geoprocess, analyze, and represent the geodata for this project. The static maps were also exported using QGIS layouts.
 * Data is shown on [Mapbox](https://www.mapbox.com/) web map. If the map got popular it would require a fee to use.
 * [Adobe Illustrator](https://www.adobe.com/products/illustrator) was used to edit the Bigfoot miniatures used as map symbols and as part of the website's graphics.
 
 ## Mapmaking Process
+### Static Maps
+The static maps were all created using QGIS. The CRS was set to ESRI: 102008 (North America Albers Equal Area Conic), as it is a standard projected coordinate system for mapping the contiguous United States. 
 
+First, I imported the CSV containing the Bigfoot sightings database as delimited text using the Data Source Manager (see Fig. 3). The data was then imported to QGIS as a point data layer. Then, I imported the  shapefiles downloaded from the US Census Bureau containing state and county boundaries. 
+![Fig 3](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig3.png)
+*Fig. 3: Thanks to the data values re-organization seen in Fig. 2, the CSV file can be imported as a point layer through the lat/lon fields*
+
+Using the Vector geoprocessing tool 'Clip', I extracted those Bigfoot sightings within my database that happened in the contiguous US. I did so clipping 
+
+
+### Webmap
 
 # Final Project Link
 
