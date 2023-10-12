@@ -133,6 +133,12 @@ Finally, after some try-and-error, and testing different options, I created this
 ![Figure 15](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig15.png)
 *Fig. 15: Styling symbol size across zoom range in Mapbox (II).*
 
+Finally, under 'Settings' I marked a 'Default map position' in terms of zoom and coordinates that matched that of the contiguous US in its entirety. Then, I pressed 'Lock' and saved these values so I could use them to mark the map's position in the the [*map.html*](https://github.com/alexmunozviso/map671-fp/blob/main/map.html) file in this repository (and home of the webmap of this project!).
+
+![Figure 16](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig16.png)
+*Fig. 16: Setting a map position for the webmap.*
+
+
 Both an inserted and full-page version of the webmap can be seen and interacted with in the project's website, accessible through the link in the section below.
 
 # Final Project Link
