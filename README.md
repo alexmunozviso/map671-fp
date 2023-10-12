@@ -21,6 +21,8 @@ For the final project of MAP671, I wanted to create a map representing curious d
 
 I am not the 'I believe' type or really interested in conspiracy theories (more like in conspiracy theorists), but I thought it could be fun to map this data. Moreover, the BFRO accepts online submissions of Bigfoot sighting reports, which adds a certain sense of community data crowdsourcing and community mapping to their project; two research topics that are of great personal interest.
 
+The decision to limit the map extent to the contiguous US was made to maintain a simpler map instead of including Alaska, Hawaii, and other extra-continental territories.
+
 ## Data Sources
 
 ### Bigfoot Sightings Data
@@ -72,7 +74,7 @@ At this point, I considered that the processing of the Bigfoot sightings databas
 Using the recently created 'Id' fields, it is possible to join the Bigfoot data to the state/county layers. The operation is done using the 'Join Attributes by Location (Summary)' tool. In Fig. 5 you can see the values given to the tool to produce a field containing the number of Bigfoot sightings per state/county.
 
 ![Figure 5](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig5.png)
-*Fig. 5: View of the values given to the'Join Attributes by Location (Summary)' tool for processing.*
+*Fig. 5: View of the values given to the 'Join Attributes by Location (Summary)' tool for processing.*
 
 
 The field obtained in the previous operation is not complete. The states/counties with no sightings reports appear as having *NULL* values. To change these for zeros, I operated the following expression in the field calculator (see also Fig. 6):
@@ -80,9 +82,7 @@ The field obtained in the previous operation is not complete. The states/countie
     if("Id_count" is null, 0, "Id_count")
 
 ![Figure 6](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig6.png)
-*Fig. 6: Field calculation to replace NULL values with zeros.*
-
-This operation can be also done by marking 'Update existing field' but I prefered to work on a new field for safety reasons; just in case something went wrong with the operation. 
+*Fig. 6: Field calculation to replace NULL values with zeros. This operation can be also done by marking 'Update existing field' but I prefered to work on a new field for safety reasons; just in case something went wrong with the operation.*
 
 Before moving on, I exported the US state data containing also the Bigfoot sightings data as a shapefile. I made its CRS ESRI: 102008 (North America Albers Equal Area Conic).
 
@@ -97,7 +97,7 @@ I exported the US county data containing also the Bigfoot sightings data as a sh
 
 Using the sightings density field that I just calculated, I made my second map. The styling and categorization was just as that of the first map. This second map can be accessed through [this link](https://alexmunozviso.github.io/map671-fp/#Bigfoot%20Sightings%20by%20County).
 
-I also created a simpler but very visually effective third map. This map shows the Bigfoot sighting reports as point data distributed through the territory of the contiguous United States. For this map, the US state map is represented using as a Single Symbol layer styling. Then, the data points for Bigfoot sightings is represented using a bigfoot symbol instead of a point. In order to do so, I opened the layer styling pan and selected 'Single symbol' (Fig. 8). Then, on 'Symbol layer type' (Fig. 9) I changed the standard 'Simple Marker' for 'SVG Marker'. Scrolling down to the bottom, there is an option to upload an SVG file and personalize the map symbol (Fig. 10). I used a Bigfoot icon that I downloaded from [Freepik](https://www.freepik.com) and edited with Adobe Illustrator to match the style of my project. Finally I tested different icon sizes and decided for 1.5.
+I also created a simpler but very visually effective third map. This map shows the Bigfoot sighting reports as point data distributed through the territory of the contiguous United States. For this map, the US state map is represented using as a Single Symbol layer styling. Then, the data points for Bigfoot sightings is represented using a bigfoot symbol instead of a point. In order to do so, I opened the layer styling pan and selected 'Single symbol' (Fig. 8). Then, on 'Symbol layer type' (Fig. 9) I changed the standard 'Simple Marker' for 'SVG Marker'. Scrolling down to the bottom, there is an option to upload an SVG file and personalize the map symbol (Fig. 10). I used a Bigfoot icon that I downloaded from [Freepik](https://www.freepik.com) and edited with Adobe Illustrator to match the style of my project. Finally, I tested different icon sizes and decided for 1.5.
 
 ![Figures 8, 9, and 10](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig8-9-10.png)
 *Fig. 8, 9, and 10 (left to right): Using a personalized SVG file as the map symbol.*
@@ -110,7 +110,7 @@ As part of this project, I also created an interactive webmap using [Mapbox](htt
 
 I started by uploading the final Bigfoot sightings and US state layers as databases to Mapbox. Then, I created a new style (i.e. map). For the basemap, I used Mapbox's template 'Outdoors'. I changed the style's name to match my project and added my two layers. 
 
-I arranged the Bigfoot point data on top of the state boundaries. For the latter, I kept the stroke but gave it a transparent fill (see Fig. 11). In order to have the data points represented as a Bigfoot vector, I selected the layer and then 'Select data/Type/Symbol' (as shown in Fig. 12).
+I arranged the Bigfoot point data on top of the state boundaries. For the latter, I kept the stroke but gave it a transparent fill (see Fig. 11). In order to have the data points represented with the Bigfoot vector, I selected the layer and then 'Select data/Type/Symbol' (as shown in Fig. 12).
 
 ![Figure 11](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig11.png)
 *Fig. 11: View of the two layers on Mapbox.*
@@ -118,7 +118,7 @@ I arranged the Bigfoot point data on top of the state boundaries. For the latter
 ![Figure 12](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig12.png)
 *Fig. 12: Changing the layer symbology from a point to a symbol in Mapbox.*
 
-Then go back to 'Style', click on 'Icon', and 'Upload Image' (as shown in Fig. 13).
+Then, I went back to 'Style', and clicked on 'Icon/Image/Upload Images' (as shown in Fig. 13).
 
 ![Figure 13](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig13.png)
 *Fig. 13: Uploading a personalized image as map symbol.*
@@ -128,7 +128,7 @@ After uploading my SVG image as the map symbol, I edited its size. Because the a
 ![Figure 14](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig14.png)
 *Fig. 14: Styling symbol size across zoom range in Mapbox (I).*
 
-Finally, after some try-and-error, and testing different options, I created this variable sizing according to zoom range:
+Finally, after some try-and-error, and testing different options, I created this variable size according to zoom range:
 
 ![Figure 15](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig15.png)
 *Fig. 15: Styling symbol size across zoom range in Mapbox (II).*
