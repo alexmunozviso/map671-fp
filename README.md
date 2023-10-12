@@ -17,7 +17,7 @@
 
 ***
 ## Project Introduction
-For the final project of MAP671, I wanted to create a map representing curious data. Looking for different themes, I stumbled upon [The Bigfoot Field Research Organization (BFRO)](http://www.bfro.net), a website compiling different databases of Bigfoot encounters including sightings, audible sightings, trackmarks, or footprints. Every report included in these databases is geocoded and timestamped. 
+For the final project of MAP671, I wanted to create a map representing curious data. Looking for different themes, I stumbled upon [The Bigfoot Field Research Organization (BFRO)](http://www.bfro.net), a website compiling different databases of Bigfoot encounter reports including sightings, audible sightings, trackmarks, or footprints. Every report included in these databases is geocoded and timestamped. 
 
 I am not the 'I believe' type or really interested in conspiracy theories (more like in conspiracy theorists), but I thought it could be fun to map this data. Moreover, the BFRO accepts online submissions of Bigfoot sighting reports, which adds a certain sense of community data crowdsourcing and community mapping to their project; two research topics that are of great personal interest.
 
