@@ -48,7 +48,7 @@ Here you can download the prime CSV file and the final version of the database a
 * [Adobe Illustrator](https://www.adobe.com/products/illustrator) was used to edit the Bigfoot miniatures used as map symbols and as part of the website's graphics.
 
 ## Mapmaking Process
-All the maps discussed in this site can be accessed in the website for this project. See the link at the [bottom of this README](#final-project-link).
+All the maps discussed in this site can be accessed in the website for this project. See the link to the site at the [bottom of this README](#final-project-link).
 
 ### Static Maps
 The static maps were all created using QGIS. The CRS was set to ESRI: 102008 (North America Albers Equal Area Conic), as it is a standard projected coordinate system for mapping the contiguous United States. 
@@ -67,12 +67,15 @@ After getting area information for my state/counties shapefiles using the 'Add g
 
 The following step was to create a field containing unique values for each of the three layers so they can be joined later. I calculated a new field called 'Id' and filled with unique values (1,2,3,4,5,...) using the expression *$Id* in the field calculator expression box.
 
-Using these fields, it is possible to join the Bigfoot data to the state/county layers. The operation is done using the 'Join Attributes by Location (Summary)' tool. In Fig. 5 you can see the values given to the tool to produce a field containing the number of Bigfoot sightings per state/county.
+At this point, I considered that the processing of the Bigfoot sightings database was concluded. I exported it as a GeoJSON and made its CRS ESRI: 102008 (North America Albers Equal Area Conic).
+
+Using the recently created 'Id' fields, it is possible to join the Bigfoot data to the state/county layers. The operation is done using the 'Join Attributes by Location (Summary)' tool. In Fig. 5 you can see the values given to the tool to produce a field containing the number of Bigfoot sightings per state/county.
 
 ![Figure 5](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig5.png)
 *Fig. 5: View of the values given to the'Join Attributes by Location (Summary)' tool for processing.*
 
-However the field obtained in the previous operation is not complete. The states/counties with no sightings reports appear as having *NULL* values. To change these for zeros, I operated the following expression in the field calculator (see also Fig. 6):
+
+The field obtained in the previous operation is not complete. The states/counties with no sightings reports appear as having *NULL* values. To change these for zeros, I operated the following expression in the field calculator (see also Fig. 6):
 
     if("Id_count" is null, 0, "Id_count")
 
@@ -81,14 +84,18 @@ However the field obtained in the previous operation is not complete. The states
 
 This operation can be also done by marking 'Update existing field' but I prefered to work on a new field for safety reasons; just in case something went wrong with the operation. 
 
-At this point, I was ready to create my first static map, which shows the amount of Bigfoot sightings per state as a choropleth map. The operation was simple, choosing to style the map layer as a graduate style based on the field containing the number of sightings in each state. The colors selected -for all the maps and the website of this project- were a gradient of light, bright, browns combined with white for the lowest map values and black as complementary for some map elements. Based on a Natural Breaks classification, I edited the values in each categories to make them seem less random. This map can be accessed through this link. LINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINK
+Before moving on, I exported the US state data containing also the Bigfoot sightings data as a shapefile. I made its CRS ESRI: 102008 (North America Albers Equal Area Conic).
+
+At this point, I was ready to create my first static map, which shows the amount of Bigfoot sightings per state as a choropleth map. The operation was simple, choosing to style the map layer as a graduate style based on the field containing the number of sightings in each state. The colors selected -for all the maps and the website of this project- were a gradient of light, bright, browns combined with white for the lowest map values and black as complementary for some map elements. Based on a Natural Breaks classification, I edited the values in each categories to make them seem less random. This map can be accessed through [this link](https://alexmunozviso.github.io/map671-fp/#Bigfoot%20Sightings%20by%20State).
 
 For the second map, I wanted to offer a more nuanced representation of the data so it could add to the information provided by the state map. Rather than just representing the number of sightings per county, I decided to normalize these values to offer a more geographically accurate map. This operation was also pretty straightforward. Using the field calculator, I divided the field containing the number of sightings by that of the county area in square kilometers (see Fig. 7).
 
 ![Figure 7](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig7.png)
 *Fig. 7: Field calculation to obtain a normalized sightings value per county.*
 
-Using the sightings density field that I just calculated, I made my second map. The styling and categorization was just as that of the first map. This second map can be accessed through this link. LINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINK
+I exported the US county data containing also the Bigfoot sightings data as a shapefile. I made its CRS ESRI: 102008 (North America Albers Equal Area Conic).
+
+Using the sightings density field that I just calculated, I made my second map. The styling and categorization was just as that of the first map. This second map can be accessed through [this link](https://alexmunozviso.github.io/map671-fp/#Bigfoot%20Sightings%20by%20County).
 
 I also created a simpler but very visually effective third map. This map shows the Bigfoot sighting reports as point data distributed through the territory of the contiguous United States. For this map, the US state map is represented using as a Single Symbol layer styling. Then, the data points for Bigfoot sightings is represented using a bigfoot symbol instead of a point. In order to do so, I opened the layer styling pan and selected 'Single symbol' (Fig. 8). Then, on 'Symbol layer type' (Fig. 9) I changed the standard 'Simple Marker' for 'SVG Marker'. Scrolling down to the bottom, there is an option to upload an SVG file and personalize the map symbol (Fig. 10). I used a Bigfoot icon that I downloaded from [Freepik](https://www.freepik.com) and edited with Adobe Illustrator to match the style of my project. Finally I tested different icon sizes and decided for 1.5.
 
@@ -96,10 +103,37 @@ I also created a simpler but very visually effective third map. This map shows t
 *Fig. 8, 9, and 10 (left to right): Using a personalized SVG file as the map symbol.*
 
 
-You can see this final static map following this link. LINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINKLINK
+You can see this final static map following [this link](https://alexmunozviso.github.io/map671-fp/#Bigfoot%20Sighting%20Reports%20(1900-2016)).
 
 ### Webmap
+As part of this project, I also created an interactive webmap using [Mapbox](https://www.mapbox.com/) that could be inserted in the header of the project's website.
+
+I started by uploading the final Bigfoot sightings and US state layers as databases to Mapbox. Then, I created a new style (i.e. map). For the basemap, I used Mapbox's template 'Outdoors'. I changed the style's name to match my project and added my two layers. 
+
+I arranged the Bigfoot point data on top of the state boundaries. For the latter, I kept the stroke but gave it a transparent fill (see Fig. 11). In order to have the data points represented as a Bigfoot vector, I selected the layer and then 'Select data/Type/Symbol' (as shown in Fig. 12).
+
+![Figure 11](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig11.png)
+*Fig. 11: View of the two layers on Mapbox.*
+
+![Figure 12](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig12.png)
+*Fig. 12: Changing the layer symbology from a point to a symbol in Mapbox.*
+
+Then go back to 'Style', click on 'Icon', and 'Upload Image' (as shown in Fig. 13).
+
+![Figure 13](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig13.png)
+*Fig. 13: Uploading a personalized image as map symbol.*
+
+After uploading my SVG image as the map symbol, I edited its size. Because the appropriate symbol size should be different depending on the zoom scale, I selected diverse sizes values according to zoom levels. To do that, I clicked on 'Size' and then 'Style across zoom range' (see Fig 14).
+
+![Figure 14](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig14.png)
+*Fig. 14: Styling symbol size across zoom range in Mapbox (I).*
+
+Finally, after some try-and-error, and testing different options, I created this variable sizing according to zoom range:
+
+![Figure 15](https://github.com/alexmunozviso/map671-fp/blob/main/img/fig15.png)
+*Fig. 15: Styling symbol size across zoom range in Mapbox (II).*
+
+Both an inserted and full-page version of the webmap can be seen and interacted with in the project's website, accessible through the link in the section below.
 
 # Final Project Link
-
-Please view the website for my final project [following this link](www.github...).
+Please view the website for my final project [following this link](https://alexmunozviso.github.io/map671-fp).
